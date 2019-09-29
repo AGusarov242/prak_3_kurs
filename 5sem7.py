@@ -8,8 +8,8 @@ class Network:
 			a.append(edges[i][0])
 			b.append(edges[i][1])
 		self.weights_dict = np.zeros((v+1,v+1))
-		for i in range(len(edges):
-			self.weights_dict[a[i], b[i] = int(edges[i][2])
+		for i in range(len(edges)):
+			self.weights_dict[a[i], b[i]] = int(edges[i][2])
 		global _infinity 
 		_infinity = 10 ** 9
 		self.min_path_to_i = [_infinity] * (v+1)
