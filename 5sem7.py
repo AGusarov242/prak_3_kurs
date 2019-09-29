@@ -1,5 +1,5 @@
 import numpy as np
-class WeightGraph:
+class Network:
 	def __init__(self, edges, v):
 		#self.weights_dict = []
 		a = []
@@ -8,13 +8,15 @@ class WeightGraph:
 			a.append(edges[i][0])
 			b.append(edges[i][1])
 		self.weights_dict = np.zeros((v+1,v+1))
-		self.weights_dict[a, b] = int(edges[a][b][2])
+		for i in range(v+1):
+			for j in range(v+1):
+				self.weights_dict[a, b] = int(edges[a][b][2])
 		global _infinity 
 		_infinity = 10 ** 9
 		self.min_path_to_i = [_infinity] * (v+1)
 		self.used = [False] * (v+1)
 
-	def min_path(self, start, v):
+	def min_time(self, start, v):
 		self.min_path_to_i[start] = 0
 		ans = 0
 		v= 1
@@ -31,5 +33,5 @@ class WeightGraph:
 		print(self.min_path_to_i)
 				
 
-G = WeightGraph([[0, 3, 5], [1, 2, 11], [2, 3, 56], [4, 3, 77], [4, 5, 89]], 6)
-G.min_path(0, 6)
+G = Network([[0, 3, 5], [1, 2, 11], [2, 3, 56], [4, 3, 77], [4, 5, 89]], 6)
+G.min_time(0, 6)
