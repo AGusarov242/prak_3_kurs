@@ -22,4 +22,4 @@ z = input()
 print(max_str(z))
 
 '''Example'''
-print(max_str("abababab"))
+'''print(max_str("abababab"))'''
