@@ -18,5 +18,8 @@ def max_str(s):
         sub_str = s
     return k, sub_str
 
+z = input()
+print(max_str(z))
+
 '''Example'''
 print(max_str("abababab"))
