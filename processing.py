@@ -7,7 +7,7 @@ import soundfile
 import audioread
 
 from multiprocessing import Process
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 def extract_mfcc(sub_folder, output_folder, path):
     output_path = "{}/{}".format(output_folder, path)
