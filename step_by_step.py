@@ -9,8 +9,8 @@ import audioread
 from multiprocessing import Process
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 
-def extract_mfcc(sub_folder, output_folder):
-    output_path = "{}/{}".format(output_folder, sub_folder[0])
+def extract_mfcc(sub_folder, output_folder, path):
+    output_path = "{}/{}".format(output_folder, path)
     os.makedirs(output_path, exist_ok=True)
     for i in sub_folder[2]:
         audio_time_series, sampling_rate = librosa.core.load("{}/{}".format(sub_folder[0],i))
@@ -21,7 +21,7 @@ def extract_mfcc(sub_folder, output_folder):
 def consistent(input_folder, output_folder):
     main_folder = os.walk(input_folder)
     for sub_folder in main_folder:
-        #path = sub_folder[0]
+        path = sub_folder[0]
         if sub_folder[2]:
-            extract_mfcc(sub_folder, output_folder)
+            extract_mfcc(sub_folder, output_folder, path)
 
