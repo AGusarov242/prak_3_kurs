@@ -6,9 +6,6 @@ import numpy as np
 import soundfile
 import audioread
 
-from multiprocessing import Process
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
-
 def extract_mfcc(sub_folder, output_folder, path):
     output_path = "{}/{}".format(output_folder, path)
     os.makedirs(output_path, exist_ok=True)
