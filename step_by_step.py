@@ -25,3 +25,4 @@ def consistent(input_folder, output_folder):
         if sub_folder[2]:
             extract_mfcc(sub_folder, output_folder, path)
 
+consistant("aac1", "new_aac")
